@@ -10,16 +10,19 @@ The application is comprised of a REST API built in spring web mvc and run on Ap
 
 The client uses Angular to present the visuals of the application. Angular will use the HTTP Client to send a request to our API and the API will serve it the data as a JSON. The json is then parsed and cast to Angular objects, and then will display on each component.
 
-## Notes For Contributing
+## Contributors
+* Javier Perez
+* Cassandra Colvin
+* Roger Bucci
 
 ## Technologies
-Project 2's backend consists of a Java application built using:
+Backend:
 - Maven
 - Spring MVC and ORM
 - Hibernate and JPA
 - JUnit
 
-The Technologies used for the Front end include:
+Frontend:
 - [Angular](https://angular.io/docs)
 - Javascript
 - HTML/CSS
