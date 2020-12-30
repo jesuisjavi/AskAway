@@ -1,0 +1,37 @@
+<h1 class="pg-head">Post a Question</h1>
+<div style="padding:20px; border-radius: 6px; border:1px solid #545677;margin-top:20px;">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="title" class="form-label">Enter a title</label>
+            <input type="text" class="form-control" id="title" placeholder="What is your question?" [(ngModel)]="model.title" name="title">
+        </div>
+        <div class="mb-3">
+            <label for="details" class="form-label">Provide us with some details.</label>
+            <textarea class="form-control" id="details" placeholder="Describe what you are trying to do" [(ngModel)]="model.details" name="details" required></textarea>
+        </div>
+        <!-- Error in DB design, cull this feature for now
+        <div class="mb-3">
+            <label for="primary-tag" class="form-label">Select the primary tag.</label>
+            <select class="form-select " id="primary-tag" [(ngModel)]="model.primaryTag" name="primaryTag">
+                <option value="">Please select a skill</option>
+                <option *ngFor="let skill of skills"
+                        [value]="skill">
+                        {{skill}}
+                </option>
+            </select>
+        </div>-->
+        <div class="mb-3">
+            <label for="tags" class="form-label">Select Tags</label>
+            <select class="form-select" [(ngModel)]="model.tags" name="tags" id="tags" multiple aria-label="multiple select example">
+                <option *ngFor="let skill of skills"
+                        [value]="skill">
+                        {{skill}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Post It!</button>
+            <button type="button" class="btn btn-outline-primary">Nevermind</button>
+        </div>
+    </form>
+</div>

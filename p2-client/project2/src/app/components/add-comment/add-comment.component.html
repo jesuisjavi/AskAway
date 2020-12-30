@@ -1,0 +1,17 @@
+<div style="padding:20px; border-radius: 6px; border:1px solid #545677;margin-top:20px;">
+    <div class="mb-3">
+        <span class="badge tag-bg" *ngFor="let tag of question.skills" style="margin-left:2px;margin-right:2px;">{{tag.name}}</span>
+        <h2>{{question.title}}</h2>
+    </div>
+    <div class="mb-3">
+        <p>{{question.details}}</p>
+        <p style="font-size: 12px;">Added By: {{question.user.firstName}} {{question.user.lastName}}</p>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="details" class="form-label">Your comment here</label>
+            <textarea class="form-control" id="details" placeholder="Describe what you are trying to do" [(ngModel)]="comment.details" name="details" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #545677;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">{{title}}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/search-questions">View Questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/post-question">Ask a Question</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/leaderboards">View Leaderboards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <app-authentication></app-authentication>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,15 @@
+.pg-head{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.tag-bg{
+    background-color: #545677;
+}
+
+.tag{
+    margin-left: 4px;
+    margin-right: 4px;
+}

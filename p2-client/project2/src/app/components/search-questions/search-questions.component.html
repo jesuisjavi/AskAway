@@ -1,0 +1,27 @@
+<div class="row mt-4">
+    <h1 class="pg-head">What is your Question?</h1>
+    <div class="row" style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+        <div class="col-md-10">
+            <input type="text" [(ngModel)]='search' class="form-control" id="search" placeholder="Enter the knowledge you seek...">
+        </div>
+        <button class="btn btn-primary col-md-2" (click)='submitSearch()'>Search</button>
+    </div>
+</div>
+
+<div *ngIf="results;else other_content">
+    <h1 class="pg-head mt-4">{{results.length}} Results:</h1>
+    <div class="question-grid mt-4" *ngFor="let question of results"><!--main body div that will affect what's within the question list-->
+        <div class="question-box">
+            <span class="badge tag-bg tag" *ngFor="let skill of question.skills">{{skill.name}}</span>
+            <h5>{{question.title}}</h5>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis; padding-left: 10px;padding-right: 10px;">{{question.details}}</p>
+            <div style="position: absolute; bottom: 0; width: 100%; padding: 5px 0;">
+                <a class="btn btn-outline-primary" href="/view-question?id={{question.questionID}}">View this Question</a>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #other_content>
+    <h1 class="pg-head mt-4">Results:</h1>
+    <p style="text-align: center;">Nothing to see...</p>
+</ng-template>

@@ -1,0 +1,44 @@
+<div class="row mt-4" style="max-width: 800px;margin:auto;">
+    <h1 class="pg-head">My Profile</h1>
+    <div class="pg-head" style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+        <a style="font-size: large; text-decoration: none;" href="/create-profile">Edit Profile</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td colspan="2" style="text-align: center;"><h2>{{user.firstName}} {{user.lastName}}</h2></td>
+            </tr> 
+        </thead>
+        <tbody style="text-align: center;">
+            <tr>
+                <td>Email: {{user.email}}</td>
+            </tr>
+            <tr>
+                <td>Github: <a href="https://github.com/{{user.gitHubAccount}}">{{user.gitHubAccount}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row mt-4" style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+    <div>
+        <!-- The table below is currently filled with place holders, Javascript or something will fill in the variables -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="main" colspan="2" style="text-align: center;">Skills</th>
+                </tr>
+                <tr>
+                    <th>Skill</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let skill of skills">
+                    <td>{{skill.name}}</td>
+                    <td>{{skill.points}}</td>
+                </tr>
+            </tbody>
+         </table>
+    </div>
+</div>

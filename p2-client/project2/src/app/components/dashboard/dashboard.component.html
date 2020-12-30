@@ -1,0 +1,23 @@
+<div class="row mt-4">
+    <h1 class="pg-head">What is your Question?</h1>
+    <div class="row" style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+        <div class="col-md-10">
+            <input [(ngModel)]='question' type="text" class="form-control" id="question" placeholder="Enter the knowledge you seek...">
+        </div>
+        <button (click)='RedirectToSearch()' class="btn btn-primary col-md-2">Search</button>
+    </div>
+    <h1 class="pg-head mt-4">Recently Asked Questions</h1>
+    <div class="question-grid mt-4">
+        <div class="question-box" *ngFor="let question of recent">
+            <div class="tags-container">
+                <span class="badge tag-bg tag" *ngFor="let tag of question.skills">{{tag.name}}</span>
+            </div>
+            <h6>{{question.title}}</h6>
+            <p class="truncate">{{question.details}}</p>
+            <div style="position: absolute; bottom: 0; width: 100%; padding: 5px 0;">
+                <a class="btn btn-outline-primary" href="/view-question?id={{question.questionID}}">View this Question</a>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary mt-4" style="max-width: 200px; margin:auto;" (click)='RedirectToSearch()'>View More</button>
+</div>

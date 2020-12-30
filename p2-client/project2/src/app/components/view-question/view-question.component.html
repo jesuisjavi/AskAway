@@ -1,0 +1,33 @@
+<h1 class="pg-head">View Question</h1>
+
+<div style="padding:20px; border-radius: 6px; border:1px solid #545677;margin-top:20px;">
+    <form>
+        <div class="mb-3">
+            <span class="badge tag-bg" *ngFor="let tag of model.skills" style="margin-left:2px;margin-right:2px;">{{tag.name}}</span>
+            <h2>{{model.title}}</h2>
+        </div>
+        <div class="mb-3">
+            <p>{{model.details}}</p>
+            <p style="font-size: 12px;">Added By: {{model.user.firstName}} {{model.user.lastName}}</p>
+        </div>
+        <div>
+            <h6>Comments <span style="font-size: 12px;font-weight:500;color:blue;"><a (click)="AddComment()">Add Comment</a></span></h6>
+            <p style="font-size: 12px;" *ngFor="let comment of comments">{{comment.details}} -<span style="text-decoration:underline;">{{comment.firstName}} {{comment.lastName}}</span></p>
+        </div>
+        <div>
+            <button (click)='AnswerQuestion()' class="btn btn-primary">Answer</button>
+        </div>
+    </form>
+    
+    <h4>Answers</h4>
+    <div>
+        <div *ngFor="let answer of model.answers" class="mb-3" style="border:1px solid black;border-radius:6px;padding:10px;">
+            <p>{{answer.details}}</p>
+            <p style="font-size: 12px;text-decoration: underline;">LastName FirstName</p>
+            <!---<div>
+                <h6>Comments <span style="font-size: 12px;font-weight:500;color:blue;"><a [routerLink]="" (click)="AddComment()">Add Comment</a></span></h6>
+                <p style="font-size: 12px;" *ngFor="let comment of answer.comments">Nice Question! I would also like to know -<span style="text-decoration:underline;">Another User</span></p>
+            </div>-->
+        </div>
+    </div>
+</div>

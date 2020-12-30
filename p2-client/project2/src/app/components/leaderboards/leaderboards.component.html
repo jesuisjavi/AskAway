@@ -1,0 +1,26 @@
+<div class="row mt-4">
+    <h1 class="pg-head">Leaderboards</h1>
+    <div class="row" style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+    </div>
+</div>
+
+<!--Beginning of a basic table for input use of users and their respective scores-->
+<h1 class="pg-head mt-1">Top Scores</h1>
+<div style="max-width: 800px; margin:auto; margin-bottom: 60px;">
+    <table class="table center">
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>User</th>
+                <th>Overall score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let leader of leaders">
+                <td>{{leader.skillName}}</td>
+                <td>{{leader.firstName}} {{leader.lastName}}</td>
+                <td>{{leader.points}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

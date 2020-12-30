@@ -1,0 +1,27 @@
+
+<h1 class="pg-head">Update Profile</h1>
+<div style="padding:20px; border-radius: 6px; border:1px solid #545677;margin-top:20px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="title" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="model.firstName" name="firstName">
+        </div>
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="model.lastName" name="lastName">
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Github email</label>
+            <input type="text" class="form-control" id="email" placeholder="Email" [(ngModel)]="model.gitHub" name="email">
+        </div>
+
+        <div class="mb-3">
+            
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
